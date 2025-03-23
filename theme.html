@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker & Theme Changer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .theme {
+      padding: 20px;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-theme {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .light-theme {
+      background-color: #fff;
+      color: #000;
+    }
+
+    label {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div id="theme-container" class="theme light-theme">
+    <h1>Color Picker & Theme Changer</h1>
+    <label for="colorPicker">Choose a Color:</label>
+    <input type="color" id="colorPicker" value="#ff0000">
+    <br><br>
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+
+  <script>
+    const colorPicker = document.getElementById('colorPicker');
+    const themeContainer = document.getElementById('theme-container');
+    const themeToggle = document.getElementById('themeToggle');
+
+    // Change background color based on color picker value
+    colorPicker.addEventListener('input', (event) => {
+      themeContainer.style.backgroundColor = event.target.value;
+    });
+
+    // Toggle between light and dark themes
+    themeToggle.addEventListener('click', () => {
+      if (themeContainer.classList.contains('light-theme')) {
+        themeContainer.classList.remove('light-theme');
+        themeContainer.classList.add('dark-theme');
+      } else {
+        themeContainer.classList.remove('dark-theme');
+        themeContainer.classList.add('light-theme');
+      }
+    });
+  </script>
+</body>
+</html>
