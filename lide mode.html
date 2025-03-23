@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light and Dark Mode</title>
+    <style>
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        body.dark-mode {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .toggle-button {
+            margin: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <h1>Light Mode and Dark Mode Toggle</h1>
+    <button class="toggle-button" onclick="toggleMode()">Switch Mode</button>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle('light-mode');
+            body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
